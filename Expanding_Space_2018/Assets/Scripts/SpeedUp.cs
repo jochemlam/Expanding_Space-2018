@@ -12,6 +12,7 @@ public class SpeedUp : MonoBehaviour {
     // destroy object out of screen
     new GameObject camera;
     public Transform thisObject;
+    private bool isActive;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class SpeedUp : MonoBehaviour {
     {
         float minRangex = camera.transform.position.x - 10.5f;
 
-        if (thisObject.transform.position.x <= minRangex)
+        if (thisObject.transform.position.x <= minRangex && isActive != true)
         {
             Destroy(this.gameObject);
         }
@@ -38,20 +39,18 @@ public class SpeedUp : MonoBehaviour {
 
     IEnumerator Pickup(Collider2D Player)
     {
+        isActive = true;
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
 
-
-        //Player.transform.localScale /= decrease;
         MoveWorld.WorldSpeed = MoveWorld.WorldSpeed * modifier;
 
         yield return new WaitForSeconds(duration);
 
-        //Player.transform.localScale *= decrease;
         MoveWorld.WorldSpeed = MoveWorld.WorldSpeed / modifier;
-
+        isActive = false;
         Destroy(gameObject);
 
 

@@ -14,14 +14,13 @@ public class GameOverScreen : MonoBehaviour
     public Text HighScore;
     void Start()
     {
-        //acquiredScore = ScoreScript.ScoreValue;
-
         highScore = PlayerPrefs.GetFloat("highScore", highScore);
     }
 
 
     void Update()
     {
+        float respawnButton = Input.GetAxisRaw("Fire1");
         if (KillPlayer.PlayerDead == true)
         {
             Score.text = "Score: " + acquiredScore;
@@ -34,7 +33,21 @@ public class GameOverScreen : MonoBehaviour
             }
         }
 
-       
+        if (respawnButton != 0)
+        {
+            respawnButton = 0;
+            Respawn();
+        }
+
+        
+    }
+    void Respawn()
+    {
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+
+        KillPlayer.PlayerDead = false;
+        ScoreScript.ScoreValue = 0;
     }
 }
 

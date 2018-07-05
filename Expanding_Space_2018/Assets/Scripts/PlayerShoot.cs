@@ -50,8 +50,13 @@ public class PlayerShoot : MonoBehaviour
         {
             bulletClone.velocity = transform.right * bulletSpeed;
         }
-        if (Input.GetKey(KeyCode.Space) && Delay == 0f 
-            && PauseMenuScript.GameIsPaused == false)
+
+        float leftTrigger = Input.GetAxisRaw("Trigger L");
+        float rightTrigger = Input.GetAxisRaw("Trigger R");
+        float fireButtons = Input.GetAxisRaw("Fire1");
+
+        if ((Input.GetKey(KeyCode.Space) || fireButtons != 0 || leftTrigger != 0 || rightTrigger != 0)
+            && Delay == 0f && PauseMenuScript.GameIsPaused == false)
         {
 
             Fire();

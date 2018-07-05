@@ -66,7 +66,7 @@ public class AstroidMovement : MonoBehaviour
 
 
         // delete astroids
-        float minRangexAstroid = camera.transform.position.x - 10f;
+        float minRangexAstroid = camera.transform.position.x - 12;
 
         if (this.gameObject.transform.position.x <= minRangexAstroid)
         {
@@ -89,8 +89,6 @@ public class AstroidMovement : MonoBehaviour
         {
             Destroy(other.gameObject, 0.5f);
             KillPlayer.PlayerDead = true;
-            //SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-            //SceneManager.UnloadSceneAsync("Main");
         }
 
     }

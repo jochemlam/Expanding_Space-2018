@@ -6,20 +6,24 @@ using UnityEngine.SceneManagement;
 public class PauseMenuScript : MonoBehaviour {
 
     public static bool GameIsPaused = false;
+    private bool axisInUse = false;
 
     public GameObject pauseMenuUI;
 	
-	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape))
+        float pauseButton = Input.GetAxisRaw("Submit");
+        float pauseButton1 = Input.GetAxisRaw("Cancel");
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
-            {
-                Resume();
-            } else
-            {
-                Pause();
-            }
+
+           if (GameIsPaused)
+                {
+                    Resume();
+                } else
+                {
+                    Pause();
+                }
         }
 	}
 
@@ -54,6 +58,5 @@ public class PauseMenuScript : MonoBehaviour {
         #else
                          Application.Quit();
         #endif
-        Debug.Log("Quit Game");
     }
 }

@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update () {
 
-        float horizontalMovement = (speed / 35) * Input.GetAxis("Horizontal");
-        float verticalMovement = (speed / 35) * Input.GetAxis("Vertical");
+        float horizontalMovement = (speed / 135) * Input.GetAxis("Horizontal");
+        float verticalMovement = (speed / 135) * Input.GetAxis("Vertical");
 
         if (PauseMenuScript.GameIsPaused != true)
         {

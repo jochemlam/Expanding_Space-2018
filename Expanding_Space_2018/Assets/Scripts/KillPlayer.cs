@@ -15,17 +15,13 @@ public class KillPlayer : MonoBehaviour {
     {
         if (PlayerDead == true)
         {
-
-           GameOverScreen.acquiredScore = Mathf.Round(ScoreScript.ScoreValue);
+            GameOverScreen.acquiredScore = Mathf.Round(ScoreScript.ScoreValue);
 
             SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
 
 #pragma warning disable CS0618 // Type or member is obsolete
             SceneManager.UnloadScene("Main");
-#pragma warning restore CS0618 // Type or member is obsolete
-
-            
+#pragma warning restore CS0618 // Type or member is obsolete           
         }
     }
-    
- }
+}

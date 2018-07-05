@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
 
-    public Text HighscoreText;
-
-    
+    public Text HighscoreText;    
 
     public void EndGame()
         {
@@ -52,8 +50,4 @@ public class MainMenu : MonoBehaviour {
         }
 
       }
-
-
-
-
 }

@@ -27,7 +27,7 @@ public class GameOverScreen : MonoBehaviour
             if (acquiredScore > highScore)
            {
                 highScore = acquiredScore;
-                HighScore.text = "Highscore: " + acquiredScore;
+                HighScore.text = "highscore: " + acquiredScore;
 
                 PlayerPrefs.SetFloat("highScore", highScore);
             }

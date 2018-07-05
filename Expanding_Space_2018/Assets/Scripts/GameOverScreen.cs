@@ -8,13 +8,13 @@ public class GameOverScreen : MonoBehaviour
 {
 
     public static float scoreAmount;
-    public static float highScore;
+    //public static float highScore;
     public static float acquiredScore;
     public Text Score;
-    public Text HighScore;
+    //public Text HighScore;
     void Start()
     {
-        highScore = PlayerPrefs.GetFloat("highScore", highScore);
+        //highScore = PlayerPrefs.GetFloat("highScore", highScore);
     }
 
 
@@ -24,13 +24,13 @@ public class GameOverScreen : MonoBehaviour
         if (KillPlayer.PlayerDead == true)
         {
             Score.text = "Score: " + acquiredScore;
-            if (acquiredScore > highScore)
-           {
-                highScore = acquiredScore;
-                HighScore.text = "highscore: " + acquiredScore;
+            //if (acquiredScore > highScore)
+           //{
+                //highScore = acquiredScore;
+               // HighScore.text = "highscore: " + acquiredScore;
 
-                PlayerPrefs.SetFloat("highScore", highScore);
-            }
+                //PlayerPrefs.SetFloat("highScore", highScore);
+            //}
         }
 
         if (respawnButton != 0)

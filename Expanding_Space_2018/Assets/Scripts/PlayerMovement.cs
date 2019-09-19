@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    public static float speed = 5;
+    public static float speed = 10;
 
     private void Start()
     {

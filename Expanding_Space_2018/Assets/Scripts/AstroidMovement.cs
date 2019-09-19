@@ -10,7 +10,7 @@ public class AstroidMovement : MonoBehaviour
     [SerializeField]
     private AudioSource SoundSource;
 
-    // Destroy astroid vars
+    // Destroy astroid variables
     new GameObject camera;
     public Rigidbody2D Astroid;
     public GameObject explode;
@@ -93,7 +93,7 @@ public class AstroidMovement : MonoBehaviour
 
     }
     public void RandomDustSpawn()
-        // spawn random dust 1 in 10 chance
+        // spawn random dust, 1 in 10 chance
     {
         if (Random.Range(1, maxInt) < 2)
         {
